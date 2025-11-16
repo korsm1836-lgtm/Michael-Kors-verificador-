@@ -4,72 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificación Michael Kors</title>
+    
     <style>
         body {
-            background: #f8f8f8;
-            font-family: Arial, sans-serif;
-            padding: 40px;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #ffffff, #e6e6e6);
             text-align: center;
         }
-        .box {
-            background: white;
-            padding: 25px;
-            width: 350px;
-            margin: auto;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+        header {
+            background: black;
+            color: white;
+            padding: 18px;
+            font-size: 1.3em;
+            font-weight: bold;
         }
+
+        .container {
+            margin: 30px auto;
+            width: 92%;
+            max-width: 420px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            width: 160px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
         input {
-            padding: 12px;
             width: 90%;
+            padding: 14px;
             border-radius: 8px;
             border: 1px solid #ccc;
             margin-bottom: 15px;
+            font-size: 1em;
+            text-align: center;
         }
+
         button {
-            background: black;
-            color: white;
-            padding: 12px;
-            border: none;
             width: 95%;
+            padding: 14px;
+            background: #000;
+            color: white;
+            border: none;
             border-radius: 8px;
+            font-size: 1.1em;
             cursor: pointer;
+            font-weight: bold;
         }
+
+        button:hover {
+            background: #333;
+        }
+
         .ok {
-            color: green;
+            color: #0b8f00;
             font-weight: bold;
+            font-size: 1.1em;
         }
+
         .bad {
-            color: red;
+            color: #cc0000;
             font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .details {
+            margin-top: 15px;
+            background: #f4f4f4;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+            padding-bottom: 30px;
         }
     </style>
 </head>
+
 <body>
 
-<h1>Verificador de Autenticidad Michael Kors</h1>
-<div class="box">
-    <p>Introduce el código del producto:</p>
+<header>Verificador Oficial Michael Kors</header>
 
-    <input id="codigo" placeholder="Ejemplo: MK-2025-001">
-    <button onclick="verificar()">Verificar</button>
+<div class="container">
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Michael_Kors_Logo.svg/512px-Michael_Kors_Logo.svg.png" 
+         class="logo">
 
-    <p id="resultado"></p>
+    <h2>Verificación de Autenticidad</h2>
+
+    <p>Introduce el código del producto</p>
+
+    <input id="codigo" placeholder="Ejemplo: MK52206">
+    
+    <button onclick="verificar()">Verificar Código</button>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+
 </div>
 
+<footer>
+    © 2025 Verificación Michael Kors — Plataforma Certificada.
+</footer>
+
 <script>
-// CODIGO DE PRUEBA
-const codigo_valido = "MK-2025-001";
-
 function verificar() {
-    let entrada = document.getElementById("codigo").value.trim();
+    let entrada = document.getElementById("codigo").value.trim().toUpperCase();
+    let salida = document.getElementById("resultado");
 
-    if (entrada === codigo_valido) {
-        document.getElementById("resultado").innerHTML =
-            "<span class='ok'>✔ Producto Original Michael Kors</span>";
+    if (entrada === "MK52206") {
+
+        salida.innerHTML = `
+            <p class="ok">✔ Producto Original Michael Kors</p>
+            <div class="details">
+                <strong>Código:</strong> MK52206<br>
+                <strong>Modelo:</strong> Reloj Dama con Cadena<br>
+                <strong>Autenticidad:</strong> 100% Verificado<br>
+                <strong>Precio:</strong> $476 USD<br>
+                <strong>Estatus:</strong> Producto Registrado en Plataforma Oficial
+            </div>
+        `;
+
+    } else if (entrada === "") {
+
+        salida.innerHTML = `<p class="bad">Por favor ingresa un código.</p>`;
+
     } else {
-        document.getElementById("resultado").innerHTML =
-            "<span class='bad'>✘ Código no válido o producto no original</span>";
+
+        salida.innerHTML = `<p class="bad">✘ Código no válido o producto no original.</p>`;
+
     }
 }
 </script>
