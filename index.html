@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación Michael Kors</title>
+    <style>
+        body {
+            background: #f8f8f8;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        input {
+            padding: 12px;
+            width: 90%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+        button {
+            background: black;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 95%;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .ok {
+            color: green;
+            font-weight: bold;
+        }
+        .bad {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Verificador de Autenticidad Michael Kors</h1>
+<div class="box">
+    <p>Introduce el código del producto:</p>
+
+    <input id="codigo" placeholder="Ejemplo: MK-2025-001">
+    <button onclick="verificar()">Verificar</button>
+
+    <p id="resultado"></p>
+</div>
+
+<script>
+// CODIGO DE PRUEBA
+const codigo_valido = "MK-2025-001";
+
+function verificar() {
+    let entrada = document.getElementById("codigo").value.trim();
+
+    if (entrada === codigo_valido) {
+        document.getElementById("resultado").innerHTML =
+            "<span class='ok'>✔ Producto Original Michael Kors</span>";
+    } else {
+        document.getElementById("resultado").innerHTML =
+            "<span class='bad'>✘ Código no válido o producto no original</span>";
+    }
+}
+</script>
+
+</body>
+</html>
